@@ -1,0 +1,73 @@
+@forward "base";
+@use "abstracts" as *;
+
+body {
+    background-color: var(--clr-bg);
+    color: var(--clr-text);
+    padding: 6rem;
+    @include breakpoint(large) {
+        padding: 10rem 20rem;
+    }
+}
+
+.title {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 5rem;
+}
+
+.permission-denied {
+    --clr-bg: var(--clr-medium-300);
+    --clr-text: var(--clr-dark-400);
+    --clr-btn: var(--clr-dark-500);
+}
+
+.position-unavailable {
+    --clr-bg: var(--clr-light-400);
+    --clr-text: var(--clr-medium-secondary-600);
+    --clr-btn: var(--clr-medium-secondary-500);
+}
+
+.timeout {
+    --clr-bg: var(--clr-light-400);
+    --clr-text: var(--clr-dark-400);
+    --clr-btn: var(--clr-dark-500);
+}
+
+.unknown-error {
+    --clr-bg: var(--clr-dark-400);
+    --clr-text: var(--clr-medium-200);
+    --clr-btn: var(--clr-medium-300);
+}
+
+.btn {
+    text-decoration: none;
+    padding: 1em 2em;
+    background-color: var(--clr-text);
+    color: var(--clr-bg);
+    border-radius: 3rem;
+    display: block;
+    margin-inline: auto;
+    width: max-content;
+    margin-top: 1rem;
+    position: relative;
+    isolation: isolate;
+
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-color: var(--clr-btn);
+        border-radius: inherit;
+        z-index: -1;
+        opacity: 0;
+        transform: scale(0, 0);
+        transition: opacity, transform, 300ms ease-in-out;
+    }
+
+    &:hover::before,
+    &:focus::before {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+}
