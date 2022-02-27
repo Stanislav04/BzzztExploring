@@ -20,7 +20,7 @@ function scssTask() {
     return src(files.scssPath)
         .pipe(sass().on("error", sass.logError))
         .pipe(postcss([autoprefixer(), cssnano()]))
-        .pipe(dest("dist"))
+        .pipe(dest("../server/website/static"))
         .pipe(browserSync.stream())
 }
 

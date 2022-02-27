@@ -1,0 +1,48 @@
+@use "abstracts" as *;
+
+.form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3em;
+
+    &-body {
+        display: grid;
+        background-color: var(--clr-light-200);
+    }
+
+    &-container {
+        width: 60vw;
+        margin: auto;
+    }
+
+    &__title {
+        grid-column: span 2;
+        text-align: center;
+        color: var(--clr-dark-400);
+        font-size: 2rem;
+    }
+
+    &__label {
+        color: var(--clr-medium-secondary-500);
+        align-self: center;
+        justify-self: center;
+        font-size: 1.25rem;
+    }
+
+    &__input {
+        background-color: var(--clr-medium-300);
+        padding: 0.6em 1.2em;
+        border: none;
+        border-radius: 5em;
+    }
+
+    &__submit-btn {
+        grid-column: span 2;
+        margin-inline: auto;
+        border: none;
+        padding: 0.8em 4em;
+        border-radius: 5em;
+        background-color: var(--clr-medium-secondary-500);
+        color: var(--clr-light-200);
+    }
+}

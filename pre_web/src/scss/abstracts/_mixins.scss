@@ -1,0 +1,18 @@
+@use "breakpoints" as *;
+
+@mixin aside-page($side) {
+    position: fixed;
+    width: 50vw;
+    height: 90vh;
+    top: 0;
+    #{$side}: 0;
+    z-index: 2;
+    overflow-y: auto;
+    transform: scaleX(0);
+    transform-origin: #{$side};
+    transition: transform 250ms ease-in-out;
+
+    @include breakpoint(medium) {
+        top: 10vh;
+    }
+}

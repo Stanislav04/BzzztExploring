@@ -1,9 +1,6 @@
 const TOM_TOM_API_KEY = "sAySjo9SKcvsUOpYgP6XTSmMqmpnGHEY"
 
-const bodyElement = document.querySelector("body")
-const mapElement = document.createElement("div")
-bodyElement.appendChild(mapElement)
-mapElement.classList.add("map")
+const mapElement = document.querySelector("map")
 
 function watchPosition() {
     navigator.geolocation.watchPosition(showResults, showError)
@@ -57,14 +54,15 @@ function showPosition(position) {
         const lngLat = [position.coords.longitude, position.coords.latitude]
         user.setLngLat(lngLat)
 
-        const data = ""
+        const data = ``
 
         fetch(`http://overpass-api.de/api/interpreter?data=${data}`)
             .then(data => data.json())
             .then(response => {
+                document.querySelector("node").forEach(node => node.remove())
                 response.elements.forEach(node => {
                     const nodeElement = document.createElement("div")
-                    body.appendChild(nodeElement)
+                    mapElement.appendChild(nodeElement)
                     // nodeElement.classList.add("")
                     nodeElement.classList.add("node")
                     new tt.Marker({

@@ -1,0 +1,6 @@
+@use "abstracts" as *;
+
+.profile {
+    @include aside-page(right);
+    background-color: #f05;
+}
