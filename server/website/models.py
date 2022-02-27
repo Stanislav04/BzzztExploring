@@ -1,18 +1,18 @@
 from . import db
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import UserMixin
-from SQLAlchemy.sql import func
+from sqlalchemy.sql import func
 
 
-class User(SQLAlchemy.Model, UserMixin):
+class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
     email = db.Column(db.String(150), unique=True)
-    name = db.Column(db.String(150))
+    nickname = db.Column(db.String(150), unique=True)
     password = db.Column(db.String(150))
     # NOTE: More data about the user
 
 
-class Place(SQLAlchemy.Model):
+class Place(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(150))
     # NOTE: More data about the places
@@ -22,7 +22,7 @@ class Place(SQLAlchemy.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
 
 
-class Comment(SQLAlchemy.Model):
+class Comment(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     data = db.Column(db.String(500))
     date = db.Column(db.DateTime(timezone=True), default=func.now())

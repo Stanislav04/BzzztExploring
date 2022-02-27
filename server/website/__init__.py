@@ -10,7 +10,6 @@ DB_NAME = "database.db"
 
 def create_app() -> Flask:
     app = Flask(__name__)
-    # TODO: Choose a secret key
     app.config["SECRET_KEY"] = f"{generate_password_hash('Arcanum clavem', method='sha256')}"
     app.config["SQLALCHEMY_DATABASE_URI"] = f"sqlite:///{DB_NAME}"
     db.init_app(app)
@@ -22,7 +21,7 @@ def create_app() -> Flask:
 
     app.register_blueprint(views, url_prefix="/")
     app.register_blueprint(auth, url_prefix="/")
-    app.register_blueprint(error_pages, url_prefix="/")
+    app.register_blueprint(error_pages, url_prefix="/error")
     app.register_blueprint(database, url_prefix="/")
 
     from .models import User, Place, Comment
