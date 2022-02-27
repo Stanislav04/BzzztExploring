@@ -1,0 +1,20 @@
+@use "abstracts" as *;
+
+.blog {
+    position: fixed;
+    width: 100vw;
+    height: 90vh;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    overflow-y: auto;
+    background-color: skyblue;
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 250ms ease-in-out;
+
+    @include breakpoint(medium) {
+        top: 10vh;
+        transform-origin: top;
+    }
+}

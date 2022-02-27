@@ -1,0 +1,6 @@
+@use "abstracts" as *;
+
+.filters {
+    @include aside-page(left);
+    background-color: #f05;
+}

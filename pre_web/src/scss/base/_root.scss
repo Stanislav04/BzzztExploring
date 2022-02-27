@@ -7,17 +7,17 @@
         }
     }
 
-    @each $screen-size, $font-size in $type-scale {
-        @if $screen-size == small {
-            @each $size, $value in $font-size {
-                --fs-#{$size}: #{$value};
-            }
-        } @else {
-            @include breakpoint(medium) {
-                @each $size, $value in $font-size {
-                    --fs-#{$size}: #{$value};
-                }
-            }
-        }
-    }
+    // @each $screen-size, $font-size in $type-scale {
+    //     @if $screen-size == small {
+    //         @each $size, $value in $font-size {
+    //             --fs-#{$size}: #{$value};
+    //         }
+    //     } @else {
+    //         @include breakpoint(medium) {
+    //             @each $size, $value in $font-size {
+    //                 --fs-#{$size}: #{$value};
+    //             }
+    //         }
+    //     }
+    // }
 }
