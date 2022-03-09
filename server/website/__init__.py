@@ -1,8 +1,9 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from os import path
-# from flask_login import LoginManager
+from flask_login import LoginManager
 from werkzeug.security import generate_password_hash
+
 
 db = SQLAlchemy()
 DB_NAME = "database.db"
@@ -10,7 +11,7 @@ DB_NAME = "database.db"
 
 def create_app() -> Flask:
     app = Flask(__name__)
-    app.config["SECRET_KEY"] = f"{generate_password_hash('Arcanum clavem', method='sha256')}"
+    app.config["SECRET_KEY"] = f"{generate_password_hash('Arcanum clavem', method='sha256', salt_length=27)}"
     app.config["SQLALCHEMY_DATABASE_URI"] = f"sqlite:///{DB_NAME}"
     db.init_app(app)
 
@@ -27,6 +28,13 @@ def create_app() -> Flask:
     from .models import User, Place, Comment
 
     create_database(app)
+
+    login_manager = LoginManager()
+    login_manager.init_app(app)
+
+    @login_manager.user_loader
+    def load_user(user_id):
+        return User.query.get(int(user_id))
 
     return app
 

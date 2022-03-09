@@ -1,22 +1,18 @@
 @use "abstracts" as *;
+@use "sass:list";
 
 .form {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 3em;
+    margin: auto;
 
-    &-body {
-        display: grid;
-        background-color: var(--clr-light-200);
-    }
-
-    &-container {
-        width: 60vw;
-        margin: auto;
+    &:not([action]) {
+        padding: 10vh 20vw;
     }
 
     &__title {
-        grid-column: span 2;
+        grid-column: list.slash(1, -1);
         text-align: center;
         color: var(--clr-dark-400);
         font-size: 2rem;
@@ -34,13 +30,14 @@
         padding: 0.6em 1.2em;
         border: none;
         border-radius: 5em;
+        color: var(--clr-dark-400);
     }
 
     &__submit-btn {
-        grid-column: span 2;
+        grid-column: list.slash(1, -1);
         margin-inline: auto;
         border: none;
-        padding: 0.8em 4em;
+        padding: 0.8em 3em;
         border-radius: 5em;
         background-color: var(--clr-medium-secondary-500);
         color: var(--clr-light-200);

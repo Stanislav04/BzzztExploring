@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Sign up</title>
+</head>
+
+<body class="bg-light-200">
+    <form class="form" method="POST">
+        <h3 class="form__title">Sign up</h3>
+        <label for="nickname" class="form__label">Nickname</label>
+        <input type="text" class="form__input" id="nickname" name="nickname" placeholder="Hello5" maxlength="150"
+            required>
+        <label for="email" class="form__label">Email</label>
+        <input type="email" class="form__input" id="email" name="email" placeholder="john@example.com" maxlength="150"
+            required>
+        <label for="password1" class="form__label">Enter password</label>
+        <input type="password" class="form__input" id="password1" name="password1" placeholder="password123"
+            maxlength="150" required>
+        <label for="password2" class="form__label">Confirm password</label>
+        <input type="password" class="form__input" id="password2" name="password2" placeholder="password123"
+            maxlength="150" required>
+        <button type="submit" class="form__submit-btn">Sign up</button>
+    </form>
+</body>
+
+</html>

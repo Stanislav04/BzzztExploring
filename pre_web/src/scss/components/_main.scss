@@ -3,16 +3,13 @@
 .main {
     display: flex;
     flex-direction: column;
+    flex-direction: column-reverse;
 
-    @include breakpoint-down(small) {
-        flex-direction: column-reverse;
+    @include breakpoint(large) {
+        flex-direction: column;
     }
 }
 
 .active {
     transform: scale(1);
-}
-
-.page {
-    padding: 2rem 1.5rem;
 }
