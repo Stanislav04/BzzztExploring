@@ -2,5 +2,47 @@
 
 .profile {
     @include aside-page(right);
-    background-color: #f05;
+    background-color: var(--clr-light-200);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.5rem 1.5rem;
+    box-shadow: -5px 0 20px rgba(0, 0, 0, 0.2);
+
+    &[logged="True"] {
+        padding: 3rem 1.5rem 6rem;
+        gap: 1.25rem;
+    }
+
+    &__sign-up {
+        text-decoration: none;
+        margin-inline-start: auto;
+        padding: 0.6em 1.25em;
+        color: var(--clr-light-300);
+        background-color: var(--clr-medium-secondary-500);
+        border-radius: 5em;
+    }
+
+    &__icon {
+        width: 8rem;
+        height: 8rem;
+        border-radius: 50%;
+    }
+
+    &__username {
+        font: {
+            size: 1.5rem;
+            family: var(--ff-accent);
+        }
+        color: var(--clr-medium-secondary-500);
+    }
+
+    &__logout {
+        text-decoration: none;
+        padding: 0.5em 1.75em;
+        border-radius: 0.25em;
+        background-color: var(--clr-medium-300);
+        color: var(--clr-medium-secondary-600);
+        margin-block-start: auto;
+    }
 }

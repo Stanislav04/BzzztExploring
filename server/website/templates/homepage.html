@@ -15,53 +15,169 @@
 <body>
     <main class="main">
         <nav class="nav">
-            <button href="#" class="nav__btn" id="filter-toggle">First</button>
-            <button href="#" class="nav__btn" id="blog-toggle">Second</button>
-            <button href="#" class="nav__btn" id="profile-toggle">Third</button>
+            <button href="#" class="nav__btn" id="filter-toggle">Filters</button>
+            <button href="#" class="nav__btn" id="blog-toggle">Blog</button>
+            <button href="#" class="nav__btn" id="profile-toggle">Profile</button>
         </nav>
         <section class="map"></section>
     </main>
-    <aside class="filters page" id="filters">
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam fuga accusamus atque mollitia necessitatibus
-            error tempore excepturi, voluptatum a consequuntur.</p>
-        <p>Nam, magni perferendis ab alias aperiam accusantium earum qui veniam sint doloribus quo iure, aliquam quae
-            fugit, quia consectetur ipsam!</p>
-        <p>Dignissimos aperiam vel saepe itaque dicta commodi molestiae! Eos temporibus soluta voluptate rem iure
-            impedit, illum laboriosam voluptatem libero quis!</p>
-        <p>Aspernatur eius assumenda quidem repellendus ea fugit officiis in culpa voluptates eveniet provident ad
-            soluta magni dicta, itaque eligendi vitae!</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus, ut amet nobis et dolor fugiat sint minus,
-            pariatur ipsam voluptas aut eveniet iusto consequatur fuga exercitationem est quidem cumque, iste nisi iure
-            nesciunt aperiam eos a deserunt. Praesentium, cum recusandae dolore accusamus sapiente omnis earum
-            exercitationem unde iusto error natus.</p>
-        <p>Asperiores tempora reprehenderit cum itaque officiis atque quo cumque fugiat vel nesciunt facilis optio
-            dolores incidunt ipsa aspernatur maxime porro sunt culpa laboriosam dolore, quis voluptate quasi
-            repudiandae. Sint vitae voluptate culpa? Recusandae iusto quasi quibusdam iure mollitia quisquam, est
-            asperiores porro beatae reprehenderit et, earum sit obcaecati numquam consequatur?</p>
-        <p>Suscipit officiis cupiditate, quod ducimus vel maiores optio praesentium cumque deserunt sapiente
-            voluptatibus repellendus, accusantium est debitis quo, necessitatibus ipsam nisi? Delectus facilis, nesciunt
-            corrupti laboriosam veritatis amet in qui odio voluptates beatae labore culpa ex deserunt totam velit ipsa
-            dolorum animi id facere ducimus magni sed eum. Quae, corrupti!</p>
-        <p>Soluta, perspiciatis odio. Non, tenetur rerum! Exercitationem, porro illo pariatur, ratione ducimus dolor et
-            nisi amet a ea tempore reprehenderit rem ipsa animi quam temporibus perferendis soluta assumenda? Delectus
-            at enim molestias magnam quo dolorum, mollitia eius corrupti deleniti pariatur hic non recusandae doloribus
-            nisi distinctio est iusto error obcaecati.</p>
-        <p>Nobis perspiciatis blanditiis recusandae laboriosam quas eum voluptatem saepe, sint, eos labore nihil
-            expedita unde amet ducimus fugiat. Rerum voluptate quis harum suscipit dignissimos asperiores nihil tempora
-            facere praesentium consequatur provident consectetur repellat magni animi ab aperiam culpa doloribus minima
-            reprehenderit soluta itaque eligendi, temporibus, molestias cupiditate. Magni, architecto beatae?</p>
+    <aside class="filters" id="filters">
+        <h2 class="filters__title">Filters</h2>
+        <h3 class="filters__group">Tourism</h3>
+        <label for="artwork" class="filters__label">artwork</label>
+        <input type="checkbox" name="artwork" id="artwork" class="filters__subgroup" data-filter-group="tourism"
+            data-filter-subgroup="artwork">
+        <label for="attraction" class="filters__label">attraction</label>
+        <input type="checkbox" name="attraction" id="attraction" class="filters__subgroup" data-filter-group="tourism"
+            data-filter-subgroup="attraction">
+        <label for="gallery" class="filters__label">gallery</label>
+        <input type="checkbox" name="gallery" id="gallery" class="filters__subgroup" data-filter-group="tourism"
+            data-filter-subgroup="gallery">
+        <label for="museum" class="filters__label">museum</label>
+        <input type="checkbox" name="museum" id="museum" class="filters__subgroup" data-filter-group="tourism"
+            data-filter-subgroup="museum">
+        <label for="viewpoint" class="filters__label">viewpoint</label>
+        <input type="checkbox" name="viewpoint" id="viewpoint" class="filters__subgroup" data-filter-group="tourism"
+            data-filter-subgroup="viewpoint">
+        <label for="zoo" class="filters__label">zoo</label>
+        <input type="checkbox" name="zoo" id="zoo" class="filters__subgroup" data-filter-group="tourism"
+            data-filter-subgroup="zoo">
+        <hr class="filters__separator">
+
+        <h2 class="filters__group">Natural</h2>
+        <label for="bay" class="filters__label">bay</label>
+        <input type="checkbox" name="bay" id="bay" class="filters__subgroup" data-filter-group="natural"
+            data-filter-subgroup="bay">
+        <label for="cave_entrane" class="filters__label">cave entrane</label>
+        <input type="checkbox" name="cave_entrane" id="cave_entrane" class="filters__subgroup"
+            data-filter-group="natural" data-filter-subgroup="cave_entrane">
+        <label for="beach" class="filters__label">beach</label>
+        <input type="checkbox" name="beach" id="beach" class="filters__subgroup" data-filter-group="natural"
+            data-filter-subgroup="beach">
+        <hr class="filters__separator">
+
+        <h2 class="filters__group">Historic</h2>
+        <label for="archaeological_site" class="filters__label">archaeological_site</label>
+        <input type="checkbox" name="archaeological_site" id="archaeological_site" class="filters__subgroup"
+            data-filter-group="historic" data-filter-subgroup="archaeological_site">
+        <label for="castle" class="filters__label">castle</label>
+        <input type="checkbox" name="castle" id="castle" class="filters__subgroup" data-filter-group="historic"
+            data-filter-subgroup="castle">
+        <label for="fortress" class="filters__label">fortress</label>
+        <input type="checkbox" name="fortress" id="fortress" class="filters__subgroup" data-filter-group="historic"
+            data-filter-subgroup="fortress">
+        <label for="palace" class="filters__label">palace</label>
+        <input type="checkbox" name="palace" id="palace" class="filters__subgroup" data-filter-group="historic"
+            data-filter-subgroup="palace">
+        <label for="fort" class="filters__label">fort</label>
+        <input type="checkbox" name="fort" id="fort" class="filters__subgroup" data-filter-group="historic"
+            data-filter-subgroup="fort">
+        <label for="memorial" class="filters__label">memorial</label>
+        <input type="checkbox" name="memorial" id="memorial" class="filters__subgroup" data-filter-group="historic"
+            data-filter-subgroup="memorial">
+        <label for="monument" class="filters__label">monument</label>
+        <input type="checkbox" name="monument" id="monument" class="filters__subgroup" data-filter-group="historic"
+            data-filter-subgroup="monument">
+        <label for="ruins" class="filters__label">ruins</label>
+        <input type="checkbox" name="ruins" id="ruins" class="filters__subgroup" data-filter-group="historic"
+            data-filter-subgroup="ruins">
+        <label for="tomb" class="filters__label">tomb</label>
+        <input type="checkbox" name="tomb" id="tomb" class="filters__subgroup" data-filter-group="historic"
+            data-filter-subgroup="tomb">
+        <label for="wayside_shrine" class="filters__label">wayside_shrine</label>
+        <input type="checkbox" name="wayside_shrine" id="wayside_shrine" class="filters__subgroup"
+            data-filter-group="historic" data-filter-subgroup="wayside_shrine">
+        <hr class="filters__separator">
+
+        <h2 class="filters__group">Man made</h2>
+        <label for="tower" class="filters__label">tower</label>
+        <input type="checkbox" name="tower" id="tower" class="filters__subgroup" data-filter-group="man_made"
+            data-filter-subgroup="tower">
+        <label for="observatory" class="filters__label">observatory</label>
+        <input type="checkbox" name="observatory" id="observatory" class="filters__subgroup"
+            data-filter-group="man_made" data-filter-subgroup="observatory">
+        <label for="lighthouse" class="filters__label">lighthouse</label>
+        <input type="checkbox" name="lighthouse" id="lighthouse" class="filters__subgroup" data-filter-group="man_made"
+            data-filter-subgroup="lighthouse">
+        <label for="bridge" class="filters__label">bridge</label>
+        <input type="checkbox" name="bridge" id="bridge" class="filters__subgroup" data-filter-group="man_made"
+            data-filter-subgroup="bridge">
+        <label for="adit" class="filters__label">adit</label>
+        <input type="checkbox" name="adit" id="adit" class="filters__subgroup" data-filter-group="man_made"
+            data-filter-subgroup="adit">
+        <hr class="filters__separator">
+
+        <h2 class="filters__group">Landuse</h2>
+        <label for="religious" class="filters__label">religious</label>
+        <input type="checkbox" name="religious" id="religious" class="filters__subgroup" data-filter-group="landuse"
+            data-filter-subgroup="religious">
+        <label for="churchyard" class="filters__label">churchyard</label>
+        <input type="checkbox" name="churchyard" id="churchyard" class="filters__subgroup" data-filter-group="landuse"
+            data-filter-subgroup="churchyard">
+        <label for="cemetery" class="filters__label">cemetery</label>
+        <input type="checkbox" name="cemetery" id="cemetery" class="filters__subgroup" data-filter-group="landuse"
+            data-filter-subgroup="cemetery">
+        <hr class="filters__separator">
+
+        <h2 class="filters__group">Building</h2>
+        <label for="temple" class="filters__label">temple</label>
+        <input type="checkbox" name="temple" id="temple" class="filters__subgroup" data-filter-group="building"
+            data-filter-subgroup="temple">
+        <label for="ruins" class="filters__label">ruins</label>
+        <input type="checkbox" name="ruins" id="ruins" class="filters__subgroup" data-filter-group="building"
+            data-filter-subgroup="ruins">
+        <label for="church" class="filters__label">church</label>
+        <input type="checkbox" name="church" id="church" class="filters__subgroup" data-filter-group="building"
+            data-filter-subgroup="church">
+        <label for="chapel" class="filters__label">chapel</label>
+        <input type="checkbox" name="chapel" id="chapel" class="filters__subgroup" data-filter-group="building"
+            data-filter-subgroup="chapel">
+        <label for="cathedral" class="filters__label">cathedral</label>
+        <input type="checkbox" name="cathedral" id="cathedral" class="filters__subgroup" data-filter-group="building"
+            data-filter-subgroup="cathedral">
+        <hr class="filters__separator">
+
+        <h2 class="filters__group">Amenity</h2>
+        <label for="drinking_point" class="filters__label">drinking_point</label>
+        <input type="checkbox" name="drinking_point" id="drinking_point" class="filters__subgroup"
+            data-filter-group="amenity" data-filter-subgroup="drinking_point">
+        <label for="library" class="filters__label">library</label>
+        <input type="checkbox" name="library" id="library" class="filters__subgroup" data-filter-group="amenity"
+            data-filter-subgroup="library">
+        <label for="theater" class="filters__label">theater</label>
+        <input type="checkbox" name="theater" id="theater" class="filters__subgroup" data-filter-group="amenity"
+            data-filter-subgroup="theater">
+        <label for="planetarium" class="filters__label">planetarium</label>
+        <input type="checkbox" name="planetarium" id="planetarium" class="filters__subgroup" data-filter-group="amenity"
+            data-filter-subgroup="planetarium">
+        <label for="place_of_worship" class="filters__label">place_of_worship</label>
+        <input type="checkbox" name="place_of_worship" id="place_of_worship" class="filters__subgroup"
+            data-filter-group="amenity" data-filter-subgroup="place_of_worship">
+        <label for="cinema" class="filters__label">cinema</label>
+        <input type="checkbox" name="cinema" id="cinema" class="filters__subgroup" data-filter-group="amenity"
+            data-filter-subgroup="cinema">
+        <hr class="filters__separator">
     </aside>
-    <aside class="profile page" id="profile">
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur dolore quod explicabo ipsum reprehenderit
-            sapiente autem impedit est ad doloribus!</p>
-        <p>Error facilis repellat iusto nam praesentium molestiae officiis esse ipsa ab, explicabo harum incidunt hic
-            iste est, veniam mollitia. Minus.</p>
-        <p>Est id quod odio rerum eum et aperiam quas, inventore sed adipisci commodi eligendi, voluptates enim rem
-            maiores nostrum molestias!</p>
-        <p>Magni, repellendus optio. Iste, quia maiores. Voluptatem magni accusantium sed veniam corrupti, odio,
-            mollitia eos ratione officia veritatis eligendi illum!</p>
+    <aside class="profile" id="profile" logged="{{ user.is_authenticated }}">
+        {% if user.is_authenticated %}
+        <img src="{{ url_for('static', filename='user_icon.png') }}" alt="User icon" class="profile__icon">
+        <p class="profile__username">{{ user.nickname }}</p>
+        <a href="/logout" class="profile__logout">Log out</a>
+        {% else %}
+        <a href="/sign-up" class="profile__sign-up">Sign up</a>
+        <form class="form" method="POST" action="/login">
+            <h3 class="form__title">Login</h3>
+            <label for="identifier" class="form__label">Email or nickname</label>
+            <input type="text" class="form__input" id="identifier" name="identifier"
+                placeholder="john@mail.bg or Hello5" maxlength="150" required>
+            <label for="password" class="form__label">Password</label>
+            <input type="password" class="form__input" id="password" name="password" placeholder="password123"
+                maxlength="150" required>
+            <button type="submit" class="form__submit-btn">Log in</button>
+        </form>
+        {% endif %}
     </aside>
-    <section class="blog page" id="blog">
+    <section class="blog" id="blog">
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel voluptatum mollitia in! Tenetur reprehenderit,
             sunt corporis facere ea autem labore itaque soluta reiciendis veritatis qui, ipsum, incidunt mollitia
             dolorem laudantium harum assumenda magnam odit id perferendis porro ad quasi vero fugit. Maiores ea ipsam,
