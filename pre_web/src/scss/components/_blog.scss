@@ -12,8 +12,9 @@
     transform: scaleY(0);
     transform-origin: bottom;
     transition: transform 250ms ease-in-out;
+    padding: 0.75rem 1.5rem;
 
-    @include breakpoint(medium) {
+    @include breakpoint(large) {
         top: 10vh;
         transform-origin: top;
     }

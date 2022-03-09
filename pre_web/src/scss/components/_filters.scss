@@ -1,6 +1,46 @@
 @use "abstracts" as *;
+@use "sass:list";
 
 .filters {
     @include aside-page(left);
-    background-color: #f05;
+    background-color: var(--clr-medium-300);
+    box-shadow: 5px 0 20px rgba(0, 0, 0, 0.2);
+    padding: 0.75rem 1.5rem 1rem;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    &__title {
+        font-size: 2.25rem;
+        font-weight: bold;
+        margin-block-end: 0.5em;
+        text-align: center;
+        grid-column: list.slash(1, -1);
+    }
+
+    &__group {
+        font-size: 1.5rem;
+        font-family: var(--ff-accent);
+        grid-column: list.slash(1, -1);
+    }
+
+    &__label {
+        font-size: 1.05rem;
+    }
+
+    &__subgroup {
+        accent-color: var(--clr-light-200);
+    }
+
+    &__separator {
+        margin-block: 1.5rem;
+        grid-column: list.slash(1, -1);
+        width: 60%;
+        margin-inline: auto;
+        background-color: var(--clr-light-200);
+        border: none;
+        border-radius: 5rem;
+        height: 3px;
+        opacity: 0.6;
+    }
 }
