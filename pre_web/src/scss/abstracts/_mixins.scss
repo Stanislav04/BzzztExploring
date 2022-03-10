@@ -2,7 +2,7 @@
 
 @mixin aside-page($side) {
     position: fixed;
-    width: 50vw;
+    width: 100vw;
     height: 90vh;
     top: 0;
     #{$side}: 0;
@@ -12,7 +12,11 @@
     transform-origin: #{$side};
     transition: transform 250ms ease-in-out;
 
-    @include breakpoint(medium) {
+    @include breakpoint(large) {
         top: 10vh;
+    }
+
+    @include breakpoint(medium) {
+        width: 50vw;
     }
 }
