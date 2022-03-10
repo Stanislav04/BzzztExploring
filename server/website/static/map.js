@@ -73,7 +73,7 @@ function showPosition(position) {
         (${makeQuery(filters, radius, position).join(" ")});
         out center;`
 
-        fetch(`http://overpass-api.de/api/interpreter?data=${query}`)
+        fetch(`https://overpass-api.de/api/interpreter?data=${query}`)
             .then(data => data.json())
             .then(response => {
                 document.querySelectorAll(".node").forEach(node => node.remove())
