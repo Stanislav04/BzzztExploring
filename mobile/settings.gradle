@@ -18,5 +18,5 @@ dependencyResolutionManagement {
         }
     }
 }
-rootProject.name = "My Application"
+rootProject.name = "BzzztExploring BETA"
 include ':app'
