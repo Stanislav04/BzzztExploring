@@ -157,6 +157,10 @@
         <input type="checkbox" name="cinema" id="cinema" class="filters__subgroup" data-filter-group="amenity"
             data-filter-subgroup="cinema">
         <hr class="filters__separator">
+
+        <input class="filters__slider" id="slider" type="range" min="1" max="100" step="1">
+        <input type="text" class="filters__slider-box" name="slider-value" id="slider-value" value="10">
+        <hr class="filters__separator">
     </aside>
     <aside class="profile" id="profile" logged="{{ user.is_authenticated }}">
         {% if user.is_authenticated %}

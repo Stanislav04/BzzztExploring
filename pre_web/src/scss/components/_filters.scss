@@ -44,4 +44,17 @@
         height: 3px;
         opacity: 0.6;
     }
+
+    &__slider {
+        accent-color: var(--clr-light-200);
+        grid-column: list.slash(1, 4);
+    }
+
+    &__slider-box {
+        width: 40%;
+        margin-inline: auto;
+        text-align: center;
+        color: var(--clr-medium-secondary-500);
+        border: 2px solid var(--clr-medium-secondary-500);
+    }
 }
