@@ -120,6 +120,26 @@ blogBtn.addEventListener("click", () => {
     blogPage.classList.toggle("active")
 })
 
+const radiusSlider = document.querySelector("#slider")
+const radiusValueBox = document.querySelector("#slider-value")
+
+console.log("Hiii")
+console.log(radiusSlider)
+radiusSlider.addEventListener("change", () => {
+    radiusSlider.min = 1
+    radiusSlider.max = 100
+    radiusValueBox.value = radiusSlider.value
+    radius = radiusValueBox.value * 1000
+})
+console.log("Done")
+
+radiusValueBox.addEventListener("change", () => {
+    radiusValueBox.value = Math.max(0, radiusValueBox.value)
+    radiusValueBox.value = Math.min(radiusValueBox.value, 100)
+    radiusSlider.value = radiusValueBox.value
+    radius = radiusValueBox.value * 1000
+})
+
 // NOTE: "onbeforeunload" for addEventListener
 
 
