@@ -1,0 +1,26 @@
+.loader {
+    position: fixed;
+    inset: 0;
+    width: 15vmax;
+    height: 3vmin;
+    margin: auto;
+    border-radius: 3rem;
+    background-color: var(--clr-dark-300);
+    animation: rotate-loader 600ms linear infinite;
+    box-shadow: 0 0 10px 100vmax rgba(0, 0, 0, 0.2);
+    display: none;
+}
+
+.loading {
+    display: block;
+}
+
+@keyframes rotate-loader {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(180deg);
+    }
+}

@@ -21,6 +21,7 @@
         </nav>
         <section class="map"></section>
     </main>
+    <div class="loader"></div>
     <aside class="filters" id="filters">
         <h2 class="filters__title">Filters</h2>
         <h3 class="filters__group">Tourism</h3>
@@ -158,6 +159,7 @@
             data-filter-subgroup="cinema">
         <hr class="filters__separator">
 
+        <label for="slider-value" class="filters__slider__label">Radius (km)</label>
         <input class="filters__slider" id="slider" type="range" min="1" max="100" step="1">
         <input type="text" class="filters__slider-box" name="slider-value" id="slider-value" value="10">
         <hr class="filters__separator">

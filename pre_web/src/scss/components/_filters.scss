@@ -47,7 +47,15 @@
 
     &__slider {
         accent-color: var(--clr-light-200);
-        grid-column: list.slash(1, 4);
+        grid-column: list.slash(2, 4);
+
+        &__label {
+            font: {
+                family: var(--ff-accent);
+                weight: bold;
+                size: 1.25rem;
+            }
+        }
     }
 
     &__slider-box {

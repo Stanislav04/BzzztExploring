@@ -89,10 +89,9 @@ function showPosition(position) {
                         .addTo(map)
                 })
             })
-            .catch(error => {
+            .catch(() => {
                 waiting = false
             })
-        makeQuery([[1, 1], [2, 2], [3, 3]], 45, position)
 
         setTimeout(() => { waiting = false }, waitingTime)
     }
@@ -123,15 +122,12 @@ blogBtn.addEventListener("click", () => {
 const radiusSlider = document.querySelector("#slider")
 const radiusValueBox = document.querySelector("#slider-value")
 
-console.log("Hiii")
-console.log(radiusSlider)
 radiusSlider.addEventListener("change", () => {
     radiusSlider.min = 1
     radiusSlider.max = 100
     radiusValueBox.value = radiusSlider.value
     radius = radiusValueBox.value * 1000
 })
-console.log("Done")
 
 radiusValueBox.addEventListener("change", () => {
     radiusValueBox.value = Math.max(0, radiusValueBox.value)
