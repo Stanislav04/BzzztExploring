@@ -1,6 +1,6 @@
 const TOM_TOM_API_KEY = "sAySjo9SKcvsUOpYgP6XTSmMqmpnGHEY"
 const defaultFilters = [["tourism", "museum"]]
-const radius = 10000
+let radius = 10000
 let waiting = false
 const waitingTime = 2000
 
@@ -87,12 +87,15 @@ function showPosition(position) {
                     })
                         .setLngLat([node.lon, node.lat])
                         .addTo(map)
+
+                    // const popup = new tt.Popup({ offset: [0, -25] }).setHTML(node.tags.name || node.tags["name:en"])
+                    // nodeMarker.setPopup(popup)
+                    // nodeMarker.addEventListener("click", () => nodeMarker.togglePopup())
                 })
             })
-            .catch(error => {
+            .catch(() => {
                 waiting = false
             })
-        makeQuery([[1, 1], [2, 2], [3, 3]], 45, position)
 
         setTimeout(() => { waiting = false }, waitingTime)
     }
@@ -123,15 +126,15 @@ blogBtn.addEventListener("click", () => {
 const radiusSlider = document.querySelector("#slider")
 const radiusValueBox = document.querySelector("#slider-value")
 
-console.log("Hiii")
-console.log(radiusSlider)
+radiusSlider.value = 10
+radiusValueBox.value = 10
+
 radiusSlider.addEventListener("change", () => {
     radiusSlider.min = 1
     radiusSlider.max = 100
     radiusValueBox.value = radiusSlider.value
     radius = radiusValueBox.value * 1000
 })
-console.log("Done")
 
 radiusValueBox.addEventListener("change", () => {
     radiusValueBox.value = Math.max(0, radiusValueBox.value)
