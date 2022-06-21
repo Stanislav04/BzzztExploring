@@ -3,6 +3,7 @@ const defaultFilters = [["tourism", "museum"]]
 let radius = 10000
 let waiting = false
 const waitingTime = 2000
+const infoBubble = document.querySelector("section.place-info")
 
 const mapElement = document.querySelector(".map")
 
@@ -79,8 +80,21 @@ function showPosition(position) {
                 document.querySelectorAll(".node").forEach(node => node.remove())
                 response.elements.forEach(node => {
                     const nodeElement = document.createElement("div")
+                    nodeElement.onclick = () => {
+                        console.log(node)
+                        const title = document.querySelector("p.place-info__title")
+                        const text = document.querySelector("p.place-info__text")
+                        if (!infoBubble.classList.contains("place-info--hidden") && title.textContent == (node.tags.name || node.tags["name:en"])) {
+                            infoBubble.classList.add("place-info--hidden")
+                        } else {
+                            title.textContent = node.tags.name || node.tags["name:en"]
+                            text.innerHTML = `${(node.tags["addr:street"] && "Address: " + node.tags["addr:street"] + "<br>") || ""}
+                            ${(node.tags["opening_hours"] && "Opening hours: " + node.tags["opening_hours"] + "<br>") || ""}
+                            ${(node.tags["website"] && "Website: " + node.tags["website"] + "<br>") || ""}`
+                            infoBubble.classList.remove("place-info--hidden")
+                        }
+                    }
                     mapElement.appendChild(nodeElement)
-                    // nodeElement.classList.add("")
                     nodeElement.classList.add("node")
                     new tt.Marker({
                         element: nodeElement
@@ -148,4 +162,11 @@ radiusValueBox.addEventListener("change", () => {
 
 function makeQuery(arr, radius, { coords: { latitude, longitude } }) {
     return arr.map(([group, subgroup]) => `node[${group}=${subgroup}](around:${radius}, ${latitude}, ${longitude});`)
+}
+
+if (document.querySelector("aside#profile").dataset["logged"] == "True") {
+    fetch("/places")
+        .then(response => response.json())
+        .then(response => console.log(response))
+        .catch(error => console.log(error))
 }

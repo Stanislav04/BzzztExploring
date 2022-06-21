@@ -19,7 +19,12 @@
             <button href="#" class="nav__btn" id="blog-toggle">Blog</button>
             <button href="#" class="nav__btn" id="profile-toggle">Profile</button>
         </nav>
-        <section class="map"></section>
+        <section class="map">
+            <section class="place-info place-info--hidden">
+                <p class="place-info__title"></p>
+                <p class="place-info__text"></p>
+            </section>
+        </section>
     </main>
     <div class="loader"></div>
     <aside class="filters" id="filters">
@@ -164,11 +169,12 @@
         <input type="text" class="filters__slider-box" name="slider-value" id="slider-value" value="10">
         <hr class="filters__separator">
     </aside>
-    <aside class="profile" id="profile" logged="{{ user.is_authenticated }}">
+    <aside class="profile" id="profile" data-logged="{{ user.is_authenticated }}">
         {% if user.is_authenticated %}
         <img src="{{ url_for('static', filename='user_icon.png') }}" alt="User icon" class="profile__icon">
         <p class="profile__username">{{ user.nickname }}</p>
         <a href="/logout" class="profile__logout">Log out</a>
+        <section class="profile__places"></section>
         {% else %}
         <a href="/sign-up" class="profile__sign-up">Sign up</a>
         <form class="form" method="POST" action="/login">
